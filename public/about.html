@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+    <!--Start of Navbar HTML Code-->
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Parent Notification and Announcement</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+
+                    <!---->
+
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Services</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="index.html">Home</a>
+                            <a href="register.html">Parent Register Form</a>
+                            <a href="facultyregister.html">Faculty Register Form</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+
+                    <!---->
+
+
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+
+                    <a href="index.html" class="nav-link"><i class="fas fa-sign-out-alt"
+                            style="font-size: 18px;"></i>Sign Out</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <!--End of Navbar-->
+
+
+    <!--Start Glassmorphism Reports-->
+    <div class="glass-background">
+        <div class="glass-panel">
+            <h1><a style="position: absolute; top: -0.1em; right: 0.6em; font-size: 300%; color: white;">About Us</a>
+            </h1>
+            <p style="font-size: 200%; color: white;">
+                By using the Parent Notification and Announcement we will place messages right on the screen.
+                You can even specify for a message to show to all teachers, or just to a particular teacher or parent.
+                This is perfect for telling everyone about an upcoming event or class change, or to remind a parent or
+                sign a permission slip. It provides a great communication tool to prominently display a message right on
+                the screen.
+                <br>
+                <p class="by-whom" style="text-align:right; font-size: 20px;"> - Amey Sawant</p>
+
+            </p>
+            <div class="glass-toolbar">
+                <!-- <button class="glass-button"></button> -->
+
+            </div>
+        </div>
+    </div>
+    <!--End of Glassmorphism Reports-->
+
+
+
+    <script>
+
+
+
+        /*Script for Navbar Js */
+
+
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLink = document.querySelectorAll(".nav-link");
+
+        hamburger.addEventListener("click", mobileMenu);
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+
+        //For Dropdown:
+
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+
+        
+    </script>
+    
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".glass-panel"), {
+        max: 15,
+		speed: 400,
+        glare: true,
+        "max-glare": 1
+	});
+    </script>
+</body>
+
+</html>
